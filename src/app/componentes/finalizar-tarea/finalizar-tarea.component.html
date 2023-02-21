@@ -1,1 +1,14 @@
-<p>finalizar-tarea works!</p>
+<br />
+<h3>Fin de la Tarea {{ tarea.id }}</h3>
+<!-- Poner id de la tarea -->
+<div class="alert alert-dark" role="alert">
+  <br />{{ tarea.nombre
+  }}<!-- Poner nombre de la tarea -->
+  <div class="text-center">
+    <button class="btn btn-danger" (click)="finalizarTareas(tarea.id)">
+      Finalizar
+    </button>
+    &nbsp;
+    <button class="btn btn-primary" routerLink="/tareas">Cancelar</button>
+  </div>
+</div>
