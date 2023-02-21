@@ -1,1 +1,46 @@
-<p>tareas works!</p>
+<br />
+<h3>Listado de Tareas</h3>
+<div style="width: 75%">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr class="filters">
+        <th>id</th>
+        <th>nombre</th>
+        <th>
+          estado
+          <select (change)="filtrarTareas()" [(ngModel)]="seleccionado">
+            <option value="Todas">Todas</option>
+            <option value="Pendiente">Pendiente</option>
+            <option value="Realizada">Realizada</option>
+            {{
+              seleccionado
+            }}
+          </select>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tarea of tareas">
+        <td>{{ tarea.id }}</td>
+        <!--id tarea -->
+        <td>{{ tarea.nombre }}</td>
+        <!--nombre tarea -->
+        <td>{{ tarea.estado }}</td>
+        <!--estado tarea -->
+        <td>
+          <button
+            class="btn btn-danger"
+            *ngIf="tarea.estado == 'Pendiente'"
+            routerLink="/finalizarTarea/{{ tarea.id }}"
+          >
+            Finalizar
+          </button>
+        </td>
+        <!--Boton finalizar Tarea -->
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Total Pendientes:{{ totales.totPendientes }}</h4>
+  <h4>Total Realizadas:{{ totales.totRealizadas }}</h4>
+</div>

@@ -9,6 +9,7 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { FinalizarTareaComponent } from './componentes/finalizar-tarea/finalizar-tarea.component';
 import { BorrarTareaComponent } from './componentes/borrar-tarea/borrar-tarea.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,10 @@ import { BorrarTareaComponent } from './componentes/borrar-tarea/borrar-tarea.co
     InicioComponent,
     HeaderComponent,
     FinalizarTareaComponent,
-    BorrarTareaComponent
+    BorrarTareaComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
