@@ -1,6 +1,10 @@
 <br />
 <h3>Listado de Tareas</h3>
 <div class="row row-cols-1 row-cols-md-4">
+  <!--1- ngFor para mostrar todas las tareas 
+      2- Pasamos cada tarea al hijo
+      3- Traemos el hijo (borrarTarea) al padre "borrarTarea($event)"
+  -->
   <app-tarea
     *ngFor="let tarea of tareas"
     [tarea]="tarea"

@@ -1,1 +1,13 @@
-<p>tarea works!</p>
+<div class="card" style="width: 12rem">
+  <div class="card-body">
+    <!-- Id de la tarea -->
+    <h5 class="card-title">Tarea {{ tarea.id }}</h5>
+    <!-- nombre de la tarea -->
+    <p class="card-text">{{ tarea.nombre }}</p>
+    <!-- estado de la tarea -->
+    <p class="card-text">{{ tarea.estado }}</p>
+  </div>
+  <button class="btn btn-danger" (click)="eliminarTarea(tarea.id)">
+    Borrar
+  </button>
+</div>

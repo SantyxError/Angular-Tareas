@@ -8,6 +8,12 @@
         <th>nombre</th>
         <th>
           estado
+
+          <!-- USO DEL SELECT:
+          1- Select (change) y el metodo que usaremos. Laeleccion la recogemos con el ngModel "Seleccionado"
+          2- Option value -> Cada seleccion posible: "Todas", "Pendiente" o "Realizada"
+          3- La interpolacion "seleccionado", que será la seleccion inicial por defecto
+          -->
           <select (change)="filtrarTareas()" [(ngModel)]="seleccionado">
             <option value="Todas">Todas</option>
             <option value="Pendiente">Pendiente</option>
@@ -20,6 +26,8 @@
       </tr>
     </thead>
     <tbody>
+      <!-- Bucle para mostrar todas las tareas  en el <tr>-->
+      <!-- En el <td> mostramos cada propiedad de la tarea -->
       <tr *ngFor="let tarea of tareas">
         <td>{{ tarea.id }}</td>
         <!--id tarea -->
@@ -28,6 +36,11 @@
         <td>{{ tarea.estado }}</td>
         <!--estado tarea -->
         <td>
+          <!-- 
+            Uso del ngIf:
+            *ngIf="tarea.estado == 'Pendiente'" -> Si el estado es pendiente, nos llevará a la ruta indicada
+
+          -->
           <button
             class="btn btn-danger"
             *ngIf="tarea.estado == 'Pendiente'"
